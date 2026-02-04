@@ -1,4 +1,5 @@
 from flask import Flask, request, jsonify
+from flask import render_template
 import tensorflow as tf
 from PIL import Image
 import numpy as np
@@ -9,6 +10,9 @@ from flask_cors import CORS
 
 app = Flask(__name__)
 CORS(app)
+@app.route('/')
+def home():
+    return render_template('index.html')
 
 # --- Pengaturan Logging (lakukan sekali saat aplikasi dimulai) ---
 if not app.debug: 
@@ -132,12 +136,19 @@ def deteksi_beberapa_sampah_route():
             
     return jsonify({'hasil_deteksi_beberapa': hasil_prediksi_semua})
 
-if __name__ == '__main__':
-    # Panggil fungsi untuk memuat model saat aplikasi dimulai
-    muat_model_ml() 
-    # Konfigurasi logging bisa juga diletakkan di sini, sebelum app.run()
-    if not app.debug:
-        pass
+muat_model_ml()
 
-    app.logger.info("Flask app akan dimulai...") # Log bahwa app akan dimulai
-    app.run(debug=True, host='0.0.0.0', port=5000)
+if __name__ == '__main__':
+    port = int(os.environ.get("PORT", 5000))
+    app.logger.info(f"Flask app berjalan di port {port}")
+    app.run(host='0.0.0.0', port=port, debug=True)
+    
+# if __name__ == '__main__':
+#     # Panggil fungsi untuk memuat model saat aplikasi dimulai
+#     muat_model_ml() 
+#     # Konfigurasi logging bisa juga diletakkan di sini, sebelum app.run()
+#     if not app.debug:
+#         pass
+
+#     app.logger.info("Flask app akan dimulai...") # Log bahwa app akan dimulai
+#     app.run(debug=True, host='0.0.0.0', port=5000)
