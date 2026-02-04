@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EcoWaste - Smart Waste Classification</title>
-    <link rel="stylesheet" href="style.css" />
+    <!-- <link rel="stylesheet" href="style.css" /> -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 
 <body>
@@ -134,7 +135,8 @@
                         secara alami. Jika dikelola dengan benar, sampah ini tidak perlu dibuang ke tempat pembuangan
                         akhir (TPA) dan bisa diubah menjadi pupuk alami.
                     </p>
-                    <img src="image\Contoh Sampah Organik.jpg"
+                    <!-- <img src="image\Contoh Sampah Organik.jpg" -->
+                    <img src="{{ url_for('static', filename='image/Contoh Sampah Organik.jpg') }}"
                         alt="Contoh Sampah Organik"
                         style="width:100%; max-width:500px; border-radius:10px; margin:1rem 0;" />
 
@@ -161,7 +163,7 @@
                         lingkungan karena proses penguraiannya
                         membutuhkan waktu lebih lama. Beberapa langkah lainya yang dapat dilakukan :
                     </p>
-                    <img src="image\Proses Kompos di Rumah.jpg"
+                    <img src="{{ url_for('static', filename='image/Proses Kompos di Rumah.jpg') }}"
                         alt="Proses Kompos di Rumah"
                         style="width:100%; max-width:500px; border-radius:10px; margin:1rem 0;" />
                     <p>
@@ -253,7 +255,7 @@
                         karton, dan produk turunannya. Kertas bisa didaur ulang menjadi produk baru, sehingga mengurangi
                         kebutuhan akan bahan baku baru dan menekan jumlah sampah di tempat pembuangan akhir (TPA).
                     </p>
-                    <img src="image\Contoh Sampah Kertas.jpg"
+                    <img src="{{ url_for('static', filename='image/Contoh Sampah Kertas.jpg') }}"
                         alt="Contoh Sampah Kertas"
                         style="width:100%; max-width:500px; border-radius:10px; margin:1rem 0;" />
 
@@ -277,7 +279,7 @@
                         memanfaatkannya kembali. Daur ulang kertas bisa menghemat pohon, air, dan energi. Berikut
                         beberapa langkah yang bisa dilakukan:
                     </p>
-                    <img src="image\Proses Daur Ulang Kertas.jpg"
+                    <img src="{{ url_for('static', filename='image/Proses Daur Ulang Kertas.jpg') }}"
                         alt="Proses Daur Ulang Kertas"
                         style="width:100%; max-width:500px; border-radius:10px; margin:1rem 0;" />
                     <p>📌 <strong>Pisahkan Sampah Kertas</strong></p>
@@ -347,7 +349,7 @@
                         sayangnya sering dibuang sembarangan. Tanpa pengelolaan yang tepat, plastik bisa mencemari
                         tanah, air, dan bahkan rantai makanan.
                     </p>
-                    <img src="image\Contoh Sampah Plastik.png"
+                    <img src="{{ url_for('static', filename='image/Contoh Sampah Plastik.jpg') }}"
                         alt="Contoh Sampah Plastik"
                         style="width:100%; max-width:500px; border-radius:10px; margin:1rem 0;" />
 
@@ -370,7 +372,8 @@
                         Sampah plastik dapat didaur ulang, tetapi harus dipilah dan dibersihkan terlebih dahulu. Berikut
                         beberapa langkah penting dalam pengelolaan sampah plastik:
                     </p>
-                    <img src="image\Daur Ulang Sampah Plastik.jpg" alt="Daur Ulang Sampah Plastik"
+                    <img src="{{ url_for('static', filename='image/Daur Ulang Sampah Plastik.jpg') }}"
+                        alt="Daur Ulang Sampah Plastik"
                         style="width:100%; max-width:500px; border-radius:10px; margin:1rem 0;" />
                     <p>📌 <strong>Pilah Sampah Plastik</strong></p>
                     <p>
@@ -492,7 +495,8 @@
             </div>
         </div>
     </footer>
-    <script src="script.js"></script>
+    <!-- <script src="script.js"></script> -->
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 
 </html>
